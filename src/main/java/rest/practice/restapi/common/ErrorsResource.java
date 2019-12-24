@@ -1,7 +1,5 @@
 package rest.practice.restapi.common;
 
-import org.hibernate.hql.internal.ast.ErrorReporter;
-import org.springframework.core.io.Resource;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
 import org.springframework.validation.Errors;

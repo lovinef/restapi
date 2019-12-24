@@ -1,7 +1,10 @@
 package rest.practice.restapi.events;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.*;
 import org.springframework.util.StringUtils;
+import rest.practice.restapi.accounts.Account;
+import rest.practice.restapi.accounts.AccountSerializer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -32,6 +35,10 @@ public class Event {
 
     @Enumerated(EnumType.STRING)
     private EventStatus eventStatus;
+
+    @ManyToOne
+    @JsonSerialize(using = AccountSerializer.class) // 특정 정보만 전달하도록 serializer 재설정
+    private Account manager;
 
     public void update() {
         // update free
